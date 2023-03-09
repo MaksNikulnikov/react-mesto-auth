@@ -3,7 +3,7 @@ import PopupWithForm from "./PopupWithForm";
 
 function EditAvatarPopup(props) {
   const { isOpen, onClose, onUpdateAvatar } = props;
-  const imgRef = React.useRef('');
+  const imgRef = React.useRef("");
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -13,22 +13,26 @@ function EditAvatarPopup(props) {
   }
 
   return (
-    <PopupWithForm name='change-profile-avatar'
-      title='Обновить аватар'
+    <PopupWithForm
+      name="change-profile-avatar"
+      title="Обновить аватар"
       isOpen={isOpen}
       onClose={onClose}
-      onSubmit={handleSubmit}>
+      onSubmit={handleSubmit}
+    >
       <div className="popup__form-section">
-        <input name="link"
+        <input
+          name="link"
           ref={imgRef}
           type="url"
           placeholder="https://somewebsite.com/someimage.jpg"
           className="popup__text popup__text_type_url"
-          required />
+          required
+        />
         <span className="popup__error"></span>
       </div>
     </PopupWithForm>
-  )
+  );
 }
 
-export default EditAvatarPopup
+export default EditAvatarPopup;
